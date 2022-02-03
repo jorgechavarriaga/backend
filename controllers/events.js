@@ -2,7 +2,7 @@ const { response } = require('express');
 const EventModel = require('../models/EventModel');
 
 const getEvents = async(req, res = response) => {
-    console.log("Get Events!")
+    // console.log("Get Events!")
     const events = await EventModel.find().populate('user', 'name');
 
     res.json({
@@ -11,7 +11,7 @@ const getEvents = async(req, res = response) => {
     })
 }
 const createEvent = async (req, res = response) => {
-    console.log("Create Event!")
+    // console.log("Create Event!")
     const event = new EventModel(req.body);
     
     try {
@@ -30,7 +30,7 @@ const createEvent = async (req, res = response) => {
     }
 }
 const updateEvent = async (req, res = response) => {
-    console.log("Update Event!")
+    // console.log("Update Event!")
     const eventId = req.params.id;
     const uid = req.uid;
 
@@ -68,7 +68,7 @@ const updateEvent = async (req, res = response) => {
 
 }
 const deleteEvent = async (req, res = response) => {
-    console.log("Delete Event!")
+    // console.log("Delete Event!")
     const eventId = req.params.id;
     const uid = req.uid;
 
